@@ -1,0 +1,28 @@
+{
+  "name": "automotive/usearch",
+  "description": "Amotive-Tech Unified Search SDK",
+  "keywords": [
+    "AmotiveTech",
+    "Unified Search"
+  ],
+  "homepage": "https://doc.a-motive.ru/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "AmotiveTech",
+      "email": "support@a-motive.ru",
+      "homepage": "https://a-motive.ru/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "guzzlehttp/guzzle": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "AmotiveTech\\UnifiedSearch\\": "src"
+    }
+  }
+}
