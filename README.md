@@ -26,7 +26,3 @@ $service = new USService(new Config(['login' => $login, 'password' => $password]
     print_r($service->user());
     print_r($service->search('фильтр маслянный XW8ZZZ7PZHG003807'));
 ```
-
-
-
-
