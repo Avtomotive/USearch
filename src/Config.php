@@ -8,7 +8,7 @@ class Config
 
     private $password;
 
-    private $serviceUrl = 'https://us-api.a-motive.ru';
+    private $serviceUrl = 'https://api.unisearch.pro';
 
     private $debug = false;
 
