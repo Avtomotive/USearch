@@ -76,7 +76,7 @@ class Service
      */
     private function safeStr($str)
     {
-        return urlencode($str);
+        return $str ? urlencode($str) : '';
     }
 
     protected function getUrl(Request $request)

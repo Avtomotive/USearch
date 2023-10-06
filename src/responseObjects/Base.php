@@ -2,6 +2,7 @@
 
 namespace AmotiveTech\UnifiedSearch\responseObjects;
 
+use DateTime;
 use Exception;
 
 abstract class Base
@@ -85,8 +86,8 @@ abstract class Base
             case 'DateTime':
                 $value = $value / 1000;
                 if ($value) {
-                    $timestamp = new \DateTime(null);
-                    $timestamp->setTimestamp($value);
+                    $timestamp = new DateTime();
+                    $timestamp->setTimestamp((int)$value);
                     return $timestamp;
                 } else {
                     return null;
