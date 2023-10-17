@@ -18,7 +18,7 @@ class UsTagsCountsResponse extends Base
     {
         return [
             'requestId' => 'string',
-            'data' => 'UsTagCount',
+            'data' => 'UsTagCount[]',
         ];
     }
 }
