@@ -7,6 +7,11 @@ class UsBrandOem extends Base
     /**
      * @var string
      */
+    public $requestedDetailId;
+
+    /**
+     * @var string
+     */
     public $detailId;
 
     /**
@@ -22,6 +27,7 @@ class UsBrandOem extends Base
     protected function getFields()
     {
         return [
+            'requestedDetailId' => 'string',
             'detailId' => 'string',
             'brand' => 'string',
             'oem' => 'string',

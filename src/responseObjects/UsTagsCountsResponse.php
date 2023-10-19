@@ -10,7 +10,7 @@ class UsTagsCountsResponse extends Base
     public $requestId;
 
     /**
-     * @var UsTagCount
+     * @var UsTagCount[]
      */
     public $data;
 
@@ -18,7 +18,7 @@ class UsTagsCountsResponse extends Base
     {
         return [
             'requestId' => 'string',
-            'data' => 'UsTagCount',
+            'data' => 'UsTagCount[]',
         ];
     }
 }
