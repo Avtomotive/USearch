@@ -15,6 +15,7 @@ class USException extends Exception
      * @var string
      */
     public $details;
+
     public function __construct(array $error)
     {
         parent::__construct($error['errCode'], $error['httpCode']);

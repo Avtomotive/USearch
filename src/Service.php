@@ -2,6 +2,7 @@
 
 namespace AmotiveTech\UnifiedSearch;
 
+use AmotiveTech\UnifiedSearch\exceptions\ConflictException;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -51,6 +52,8 @@ class Service
                         throw new AccessDeniedException($error);
                     case 404:
                         throw new NotFoundException($error);
+                    case 409:
+                        throw new ConflictException($error);
                     case 500:
                         throw new ExecutionException($error);
                 }
