@@ -15,10 +15,12 @@ use AmotiveTech\UnifiedSearch\responseObjects\UsTagsCountsResponse;
 use AmotiveTech\UnifiedSearch\responseObjects\UsUser;
 use AmotiveTech\UnifiedSearch\responseObjects\UsVehicleListResponse;
 use AmotiveTech\UnifiedSearch\responseObjects\UsDetailResolveResponse;
+use JetBrains\PhpStorm\Deprecated;
 
 /**
  * Class UnifiedSearchService
  * @package AmotiveTech\UnifiedSearch
+ * @deprecated Use laximoru/search package
  */
 class USService extends Service
 {
@@ -49,6 +51,9 @@ class USService extends Service
     public const ADVANCED_SEARCH_SEARCHBY_OFFER_AND_DETAIL = 'OFFER_AND_DETAIL';
     public const ADVANCED_SEARCH_SEARCHBY_OFFER_AND_DETAIL_AND_CROSS = 'OFFER_AND_DETAIL_AND_CROSS';
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function advancedSearch(
         string $query,
         ?int   $autoInfoId = null,
@@ -82,6 +87,9 @@ class USService extends Service
         ], $params);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function search(string $query, ?int $autoInfoId = null, array $tags = [], string $locale = 'ru_RU', int $page = 0, int $size = 20): UsSearchResultPageResponse
     {
         return $this->makeRequest(UsSearchResultPageResponse::class, 'GET', 'search', 'search', [
@@ -94,6 +102,9 @@ class USService extends Service
         ]);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function searchByOems(int $autoInfoId, array $oems, string $locale = 'ru_RU'): UsSearchByOemsResponse
     {
         return $this->makeRequest(UsSearchByOemsResponse::class, 'GET', 'search', 'searchByOems', [
@@ -103,6 +114,9 @@ class USService extends Service
         ]);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function countByTags(int $autoInfoId): UsTagsCountsResponse
     {
         return $this->makeRequest(UsTagsCountsResponse::class, 'GET', 'search', 'countByTags', [
@@ -110,6 +124,9 @@ class USService extends Service
         ]);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function complete(string $query): UsStringsResponse
     {
         return $this->makeRequest(UsStringsResponse::class, 'GET', 'search', 'complete', [
@@ -130,6 +147,9 @@ class USService extends Service
     public const DELIMITER_COMMA = ",";
     public const DELIMITER_SEMICOLON = ";";
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function offersProcess(string $tmpFileName, string $userFileName, ?string $delimiter = null, ?string $charsetName = null): UsOffer
     {
         $params = [];
@@ -145,6 +165,9 @@ class USService extends Service
         return $this->makeRequest(UsOffer::class, 'POST', 'offer', 'process', $params, null, $tmpFileName, $userFileName);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function offersList(int $page = 0, int $size = 20): UsOfferPageResponse
     {
         return $this->makeRequest(UsOfferPageResponse::class, 'GET', 'offer', 'list', [
@@ -153,21 +176,33 @@ class USService extends Service
         ]);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function offersGet(int $offerId): UsOffer
     {
         return $this->makeRequest(UsOffer::class, 'GET', 'offer', 'get', ['offerId' => $offerId]);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function offersSource(int $offerId): string
     {
         return $this->makeRequest(null, 'GET', 'offer', 'source', ['offerId' => $offerId]);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function offersErrors(int $offerId): string
     {
         return $this->makeRequest(null, 'GET', 'offer', 'errors', ['offerId' => $offerId]);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function offersListTags(int $offerId): UsStringsResponse
     {
         return $this->makeRequest(UsStringsResponse::class, 'GET', 'offer', 'listTags', ['offerId' => $offerId]);
@@ -177,6 +212,9 @@ class USService extends Service
      *  Vehicle identification
      *****************************/
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function vehicleIdentify(string $identString, string $locale = 'ru_RU'): UsVehicleListResponse
     {
         return $this->makeRequest(UsVehicleListResponse::class, 'GET', 'vehicle', 'identify', [
@@ -185,6 +223,9 @@ class USService extends Service
         ]);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function vehicleIdentifyBySsd(string $catalog, string $vehicleId, string $ssd, string $locale = 'ru_RU'): UsVehicleListResponse
     {
         return $this->makeRequest(UsVehicleListResponse::class, 'GET', 'vehicle', 'identifyBySsd', [
@@ -199,6 +240,9 @@ class USService extends Service
      *  User info
      *****************************/
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function user(): UsUser
     {
         return $this->makeRequest(UsUser::class, 'GET', 'currentUser');
@@ -208,6 +252,9 @@ class USService extends Service
      *  Vehicle indexation
      *****************************/
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function indexationListAutoInfo(int $page = 0, int $size = 20): UsAutoInfoPageResponse
     {
         return $this->makeRequest(UsAutoInfoPageResponse::class, 'GET', 'autoInfo', 'listAutoInfo', [
@@ -216,6 +263,9 @@ class USService extends Service
         ]);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function indexationIndexVehicle(int $autoInfoId): UsAutoInfoResponse
     {
         return $this->makeRequest(UsAutoInfoResponse::class, 'GET', 'autoInfo', 'indexVehicle', [
@@ -223,6 +273,9 @@ class USService extends Service
         ]);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function indexationGetAutoInfo(int $autoInfoId): UsAutoInfoResponse
     {
         return $this->makeRequest(UsAutoInfoResponse::class, 'GET', 'autoInfo', 'getAutoInfo', [
@@ -230,6 +283,9 @@ class USService extends Service
         ]);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function indexationFindByIdentString(string $identString): UsAutoInfoListResponse
     {
         return $this->makeRequest(UsAutoInfoListResponse::class, 'GET', 'autoInfo', 'findByIdentString', [
@@ -237,6 +293,9 @@ class USService extends Service
         ]);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function resolveDetailIdsToOemsForAutoInfo(int $autoInfoId, array $detailId): UsDetailResolveResponse
     {
         return $this->makeRequest(UsDetailResolveResponse::class, 'GET', 'search', 'resolveDetailIdsToOemsForAutoInfo', [
@@ -245,6 +304,9 @@ class USService extends Service
         ]);
     }
 
+    /**
+     * @deprecated Use laximoru/search package
+     */
     public function getParamsForOemService(int $autoInfoId): UsOemParamsResponse
     {
         return $this->makeRequest(UsOemParamsResponse::class, 'GET', 'autoInfo', 'getParamsForOemService', [
