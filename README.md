@@ -1,1 +1,1 @@
-Актуальная версия в https://github.com/laximoru/search
+Актуальная версия в https://github.com/laximo/search
